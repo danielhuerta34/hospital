@@ -11,5 +11,5 @@ DB_HOST=localhost
 DB_USER=root
 DB_NAME=hospital
 DB_PASS=
-# Set the database type to be used. Available values are "mysql", "pgsql", "sqlite" and "sqlserver".
+Set the database type to be used. Available values are "mysql", "pgsql", "sqlite" and "sqlserver".
 DB_TYPE=mysql
