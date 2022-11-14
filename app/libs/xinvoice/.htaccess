@@ -1,0 +1,7 @@
+RewriteEngine on
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond %{REQUEST_URI} !(\.gif|\.jpg|\.png)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ xinvoice.php?path=$1 [NC,L,QSA]
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ xinvoice.php?path=$1 [NC,L,QSA]

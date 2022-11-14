@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+ErrorDocument 404 http://localhost/FMVC/error/
+RewriteRule .* - [e=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond  %{SCRIPT_FILENAME} !-d
+RewriteCond  %{SCRIPT_FILENAME} !-f
+#RewriteRule ^/?([a-zA-Z]+)(/([a-zA-Z]+)(/([0-9]+))?)?$ index.php?controller=$1&action=$3&id=$5 [L]
+RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+</IfModule>
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
